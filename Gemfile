@@ -1,7 +1,38 @@
 source 'https://rubygems.org'
+ruby '2.0.0' # ruby-gemset=rails_4_0_3
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+gem 'bootstrap-sass'
+
+group :production do
+  # enables serving assets in production and setting your logger to 
+  # standard out, both of which are required to run a Rails 4 
+  # application on a twelve-factor provider.
+  # See also http://12factor.net/
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  # Pry is a powerful alternative to the standard IRB shell for Ruby.
+  gem 'pry'
+  gem 'pry-rails'
+  # rspec-rails is a testing framework for Rails 3.x and 4.x.
+  gem 'rspec-rails'
+end
+
+group :test do
+  # WebDriver is a tool for writing automated tests of websites. 
+  # It aims to mimic the behavior of a real user, and as such 
+  # interacts with the HTML of the application.
+  gem 'selenium-webdriver'
+  # Capybara is an integration testing tool for rack based web 
+  # applications. It simulates how a user would interact with a website
+  gem 'capybara'
+  # factory_girl_rails provides Rails integration for factory_girl. 
+  # All Rails-specific features are only compatible with Rails 3.
+  gem 'factory_girl_rails'
+end
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -21,7 +52,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster. 
+# Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
