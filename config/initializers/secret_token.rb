@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Wszmd::Application.config.secret_key_base = 'c1d9bb053538aa286aff5f82c7a343de77819d87530912cc1ce4b70aca6c5169e6b1a7e10e008760b3db0614eb398161a662fbc9a897247eaeed3f8ebe7d4abc'
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Wszmd::Application.config.secret_key_base = secure_token
