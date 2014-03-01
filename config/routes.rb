@@ -1,5 +1,6 @@
 Wszmd::Application.routes.draw do
   root               'static_pages#home'
+  get 'main',    to: 'static_pages#main'
   get 'about',   to: 'static_pages#about'
   get 'contact', to: 'static_pages#contact'
   # The priority is based upon order of creation: first created -> highest priority.
