@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.0.0' # ruby-gemset=rails_4_0_3
+ruby '2.0.0'
+# ruby-gemset=rails_4_0_3
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
@@ -19,9 +20,6 @@ group :development, :test do
   gem 'pry-rails'
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
   gem 'rspec-rails'
-end
-
-group :test do
   # WebDriver is a tool for writing automated tests of websites. 
   # It aims to mimic the behavior of a real user, and as such 
   # interacts with the HTML of the application.
@@ -29,6 +27,9 @@ group :test do
   # Capybara is an integration testing tool for rack based web 
   # applications. It simulates how a user would interact with a website
   gem 'capybara'
+end
+
+group :test do
   # factory_girl_rails provides Rails integration for factory_girl. 
   # All Rails-specific features are only compatible with Rails 3.
   gem 'factory_girl_rails'
