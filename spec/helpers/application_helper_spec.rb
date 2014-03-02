@@ -14,7 +14,7 @@ require 'spec_helper'
 describe ApplicationHelper do
   describe "#full_title" do
 
-    let(:base_title)      { 'Wendy Ziecheck, M.D.' }
+    let(:base_title)      { 'Wendy S. Ziecheck, M.D.' }
     let(:home_page_title) { 'Internal Medicine' }
 
     it "returns the page's full title" do
