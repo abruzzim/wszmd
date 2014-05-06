@@ -8,6 +8,15 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def practice
+  end
+
+  def insurance
+  end
+
+  def services
+  end
+
   def contact
   end
 end

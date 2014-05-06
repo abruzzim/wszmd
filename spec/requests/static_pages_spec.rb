@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Static Pages" do
 
-  describe "Home Page" do
+  describe "Home (Root) Page" do
 
     before(:each) { visit root_path }
 
@@ -27,9 +27,9 @@ describe "Static Pages" do
       it "has the link to enter the website" do
         find_link('Enter').visible?
       end
-      it "has the the link to the Main page" do
+      it "links to the Main page" do
         click_link "Enter"
-        expect(page).to have_css('h1', text: 'Main')
+        expect(page).to have_css('h1', text: 'Philosophy')
       end
 
     end
@@ -43,11 +43,11 @@ describe "Static Pages" do
     it "has the title 'Wendy S. Ziecheck, M.D. | Main'" do
       expect(page).to have_title('Wendy S. Ziecheck, M.D. | Main')
     end
-    it "has the content 'Main'" do
-      expect(page).to have_css('h1', text: 'Main')
+    it "has the content 'Philosophy'" do
+      expect(page).to have_css('h1', text: 'Philosophy')
     end
-    it "has the link for the About page" do
-      find_link("About").visit?
+    it "has the link to the About page" do
+      find_link('About').visible?
     end
     it "has the link to the Contact page" do
       click_link "Contact"

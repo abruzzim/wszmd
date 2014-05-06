@@ -1,8 +1,11 @@
 Wszmd::Application.routes.draw do
-  root               'static_pages#home'
-  get 'main',    to: 'static_pages#main'
-  get 'about',   to: 'static_pages#about'
-  get 'contact', to: 'static_pages#contact'
+  root                 'static_pages#home'
+  get 'main',      to: 'static_pages#main'
+  get 'about',     to: 'static_pages#about'
+  get 'practice',  to: 'static_pages#practice'
+  get 'services',  to: 'static_pages#services'
+  get 'insurance', to: 'static_pages#insurance'
+  get 'contact',   to: 'static_pages#contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
